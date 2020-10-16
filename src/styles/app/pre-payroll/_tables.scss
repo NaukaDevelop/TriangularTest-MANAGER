@@ -1,0 +1,59 @@
+table{
+  width: 100%;
+  border: 1pt solid lightgray;
+}
+
+table tr{
+  border: 1pt solid lightgray;
+}
+
+
+
+table tr:hover {
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: rgb(252, 252, 128);
+}
+
+table .btn{
+  border: 1px;
+   font-size: 0.8rem;
+   padding-top: 0;
+   padding-bottom: 0;
+ }
+
+ .table-area{
+   max-width: 95%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+.table-scrollbar {
+  position: relative;
+  min-height: 10vh;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.tableFixHead thead th {
+  position: sticky;
+  padding-top: 1rem;
+  top: 0;
+  font-size: 0.7rem;
+  z-index: 99 !important;
+}
+
+.tableHeaderBackground {
+  background: rgb(196, 250, 217);
+  color: green;
+  line-height: 1rem;
+}
+
+.tableBody {
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+
+.table-row-active {
+  background-color: yellow;
+}

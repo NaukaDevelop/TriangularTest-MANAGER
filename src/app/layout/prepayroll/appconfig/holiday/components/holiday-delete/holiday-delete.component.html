@@ -1,0 +1,16 @@
+<h1 mat-dialog-title class="text-center text-danger">Está seguro que desea
+  borrar este registro
+</h1>
+
+<hr>
+
+<p>{{data.holidaySelected.holidayDate}}</p>
+<p>{{data.holidaySelected.holidayDescription}}</p>
+
+<hr>
+
+<!-- {{data.holidaySelected | json}} -->
+
+
+<button class="btn btn-danger" (click)="onDeleteRecord()">Eliminar</button>
+<button class="btn btn-secondary" (click)="onCloseModal()">Regresar</button>

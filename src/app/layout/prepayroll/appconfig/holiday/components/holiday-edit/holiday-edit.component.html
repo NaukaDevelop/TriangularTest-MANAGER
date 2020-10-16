@@ -1,0 +1,68 @@
+<!-- Horizontal Form-->
+
+<div class="card-close">
+
+</div>
+<div class="card-header d-flex align-items-center">
+  <p class="h4">Editar</p>
+</div>
+<div class="card-body">
+
+  <!-- /********************************************************************************/ -->
+
+  <form class="" [formGroup]="recordForm" autocomplete="off"
+        [attr.disabled]="holidayLocal.holidayAction == 'view' ? '' : null">
+
+
+    <!-- holidayId -->
+    <article class="form-holidayId" id="holidayId">
+      <label class="register-label small">Fecha</label>
+      <input type="text" formControlName="holidayId"
+             class="form-control register-input"
+             [attr.disabled]="true" />
+      <div *ngIf="(f.holidayId.errors && !f.holidayId.pristine)"
+           class="small text-danger">
+        <div *ngIf="f.holidayId.errors.required">
+          Este dato es obligatorio
+        </div>
+
+      </div>
+    </article>
+
+    <!-- holidayDescription -->
+    <article class="form-holidayDescription" id="holidayDescription">
+      <label class="register-label small">Descripción</label>
+      <input type="text" formControlName="holidayDescription"
+             class="form-control register-input" />
+      <div *ngIf="(f.holidayDescription.errors && !f.holidayDescription.pristine)"
+           class="small text-danger">
+        <div *ngIf="f.holidayDescription.errors.required">
+          Este dato es obligatorio
+        </div>
+
+      </div>
+    </article>
+
+
+
+    <div class="form-button-area mt-4 ">
+      <div class="d-flex justify-content-between mt-0 pt-2 mb-0 pb-0">
+        <div class="form-group row ml-2">
+
+          <input type="submit" value="Guardar" class="btn btn-success mr-2"
+                 *ngIf="!recordForm.pristine && recordForm.valid"
+                 (click)="onSubmit()">
+          <input type="button" value="Regresar a la lista" (click)="onReturn()"
+                 class="btn btn-secondary mr-2">
+          <input type="submit" value="Borrar formulario"
+                 *ngIf="holidayLocal.holidayAction == 'new'"
+                 class="btn btn-warning mr-2" (click)="onFillForm()">
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+</div>

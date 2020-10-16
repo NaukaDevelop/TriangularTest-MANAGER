@@ -1,0 +1,41 @@
+<section class="d-flex flex-row-reverse">
+
+  <div class="p-2">
+    <app-holiday-list-filter></app-holiday-list-filter>
+  </div>
+
+  <div class="p-2">
+    <section>
+
+      <button mat-mini-fab color="primary" matTooltip="Editar"
+              aria-label="Editar" *ngIf="holidayLocal.holidaySelected"
+              (click)="onEditRecord()">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="accent" matTooltip="Eliminar"
+              aria-label="Eliminar" *ngIf="holidayLocal.holidaySelected" (click)="onDeleteRecord()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="primary" matTooltip="Buscar en la lista"
+              aria-label="Buscar" (click)="onFind()">
+        <mat-icon>search</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="primary" matTooltip="Renovar la lista"
+              aria-label="Renovar" (click)="onGetList()">
+        <mat-icon>autorenew</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="primary" matTooltip="Agregar nuevo registro"
+              aria-label="Agregar" (click)="onNewRecord()">
+        <mat-icon>add</mat-icon>
+      </button>
+
+      <app-holiday-list-export></app-holiday-list-export>
+
+    </section>
+  </div>
+
+</section>

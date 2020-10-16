@@ -1,0 +1,65 @@
+<mat-toolbar class="expanded-toolbar toolbar-bg">
+
+  <div>
+    <button mat-icon-button matTooltip="Menú" (click)="toogleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  <!--  <app-navigation-brand></app-navigation-brand> -->
+  <span> &nbsp;Grupo<strong>&nbsp;Nazan</strong></span>
+  <span> &nbsp;<small>Prenómina</small> </span>
+
+    <!-- <span> &nbsp;Triangular<strong></strong></span>
+        <span> &nbsp;<small>Base</small> </span> -->
+  </div>
+
+  <div>
+    <span class="toolbar-title">{{navigationLocal.title}}</span>
+  </div>
+
+  <!-- <span style="flex: 1 1 auto;"></span> -->
+
+  <section class="expanded-toolbar">
+
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <button mat-button *ngIf="!navigationLocal.isAuthenticated" (click)="login()">
+        <mat-icon>power_settings_new</mat-icon>
+        Login
+      </button>
+      <button mat-button *ngIf="navigationLocal.isAuthenticated" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </div>
+  </section>
+</mat-toolbar>
+
+
+
+<mat-menu #accountMenu [overlapTrigger]="false" yPosition="below">
+  <button mat-menu-item class="expanded-toolbar">
+    <mat-icon>exit_to_app</mat-icon>Logout
+  </button>
+</mat-menu>
+
+
+<!--
+<section class="expanded-toolbar">
+  <span class="toolbar-username">{{userName}}</span>
+
+  <button mat-icon-button matTooltip="My Account"
+          [matMenuTriggerFor]="accountMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button *ngIf="!isAuthenticated" (click)="login()">
+      <mat-icon>power_settings_new</mat-icon>
+      Login
+    </button>
+    <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
+  </div>
+</section> -->

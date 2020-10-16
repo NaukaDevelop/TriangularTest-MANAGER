@@ -1,0 +1,19 @@
+<div class="card text-white bg-primary">
+  <div class="card-body">
+    <p class="">
+      &nbsp;
+      <span></span></p>
+
+
+    <p class="">
+      {{mainDashboardLocal.mainDashboardCalculatedPtg | percent:'2.1-5'}}
+      <span>Calculadas</span> -
+      {{mainDashboardLocal.mainDashboardUncalculatedPtg | percent:'2.1-5'}}
+      <span>Sin Calcular</span></p>
+    <p class="">
+      {{mainDashboardLocal.mainDashboardAcceptedPtg | percent:'2.1-5'}}
+      <span>Aceptadas</span> -
+      {{mainDashboardLocal.mainDashboardPendingPtg | percent:'2.1-5'}}
+      <span>Pendientes</span></p>
+  </div>
+</div>

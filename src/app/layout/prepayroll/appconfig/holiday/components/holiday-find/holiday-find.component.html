@@ -1,0 +1,161 @@
+<!-- Horizontal Form-->
+
+<div class="card-close">
+
+</div>
+<div class="card-header d-flex align-items-center">
+  <p class="h4">Buscar</p>
+</div>
+<div class="card-body">
+
+  <!-- /********************************************************************************/ -->
+
+  <form class="" [formGroup]="recordForm" autocomplete="off">
+
+
+<!--holidayDate -->
+<article class="form-holidayDate" id="holidayDate">
+  <label class="register-label small">Fecha</label>
+  <input type="text" formControlName="holidayDate"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayDate.errors && !f.holidayDate.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayDate.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+
+<!-- holidayDescription -->
+<article class="form-holidayDescription" id="holidayDescription">
+  <label class="register-label small">Descripción</label>
+  <input type="text" formControlName="holidayDescription"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayDescription.errors && !f.holidayDescription.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayDescription.errors.required">
+      Este dato es obligatorio
+    </div>
+  </div>
+</article>
+
+<hr>
+
+<mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+  <mat-expansion-panel-header class="bg-sidenav">
+    Campos de control
+  </mat-expansion-panel-header>
+
+
+  <section>
+
+    <!-- holidayId -->
+    <article class="form-holidayId" id="holidayId">
+      <label class="register-label small">Id</label>
+      <input type="text" formControlName="holidayId"
+             class="form-control register-input"
+          />
+      <div *ngIf="(f.holidayId.errors && !f.holidayId.pristine)"
+           class="small text-danger">
+        <div *ngIf="f.holidayId.errors.required">
+          Este dato es obligatorio
+        </div>
+
+      </div>
+    </article>
+
+<!-- holidaySts -->
+<article class="form-holidaySts" id="holidaySts">
+  <label class="register-label small">Sts</label>
+  <input type="text" formControlName="holidaySts"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidaySts.errors && !f.holidaySts.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidaySts.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+
+
+<!-- holidayChk -->
+<article class="form-holidayChk" id="holidayChk">
+  <label class="register-label small">Chk</label>
+  <input type="text" formControlName="holidayChk"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayChk.errors && !f.holidayChk.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayChk.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+
+
+<!-- holidayCreated -->
+<article class="form-holidayCreated" id="holidayCreated">
+  <label class="register-label small">Creación</label>
+  <input type="text" formControlName="holidayCreated"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayCreated.errors && !f.holidayCreated.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayCreated.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+
+
+<!--holidayUpdated -->
+<article class="form-holidayUpdated" id="holidayUpdated">
+  <label class="register-label small">Modificación</label>
+  <input type="text" formControlName="holidayUpdated"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayUpdated.errors && !f.holidayUpdated.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayUpdated.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+
+
+<!-- holidayData -->
+<article class="form-holidayData" id="holidayData">
+  <label class="register-label small">Data</label>
+  <input type="text" formControlName="holidayData"
+         class="form-control register-input" />
+  <div *ngIf="(f.holidayData.errors && !f.holidayData.pristine)"
+       class="small text-danger">
+    <div *ngIf="f.holidayData.errors.required">
+      Este dato es obligatorio
+    </div>
+
+  </div>
+</article>
+</section>
+</mat-expansion-panel>
+<!-- /******************************************************** -->
+
+</form>
+</div>
+
+
+<section class="form-button-area mt-4 ">
+  <div class="d-flex justify-content-between mt-0 pt-2 mb-0 pb-0">
+    <div class="form-group row ml-2">
+      <input type="submit" value="Buscar" class="btn btn-success mr-2"
+             (click)="onSubmit()">
+      <input type="button" value="Regresar a la lista" (click)="onReturn()"
+             class="btn btn-secondary mr-2">
+      <input type="submit" value="Borrar formulario"
+             *ngIf="holidayLocal.holidayAction == 'new'"
+             class="btn btn-warning mr-2" (click)="onFillForm()">
+    </div>
+  </div>
+</section>

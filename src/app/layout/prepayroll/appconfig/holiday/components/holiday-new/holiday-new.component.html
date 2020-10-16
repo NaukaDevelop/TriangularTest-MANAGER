@@ -1,0 +1,69 @@
+<!-- Horizontal Form-->
+
+<div class="card-close">
+
+</div>
+<div class="card-header d-flex align-items-center">
+  <p class="h4">Nuevo día feriado</p>
+</div>
+
+
+<div class="card-body">
+
+  <!-- /********************************************************************************/ -->
+
+
+
+  <form class="" [formGroup]="holidayLocal.holidayForm" autocomplete="off"
+        [attr.disabled]="holidayLocal.holidayAction == 'view' ? '' : null">
+
+
+    <!-- holidayDate -->
+    <article class="form-holidayDate" id="holidayDate">
+      <label class="register-label small">Fecha</label>
+      <!-- <input type="text" formControlName="holidayDate"
+             class="form-control register-input"
+             [attr.disabled]="holidayLocal.holidayAction == 'edit' ? '' : null" /> -->
+             <app-holiday-new-datepicker></app-holiday-new-datepicker>
+      <div *ngIf="(f.holidayDate.errors && !f.holidayDate.pristine)"
+           class="small text-danger">
+        <div *ngIf="f.holidayDate.errors.required">
+          Este dato es obligatorio
+        </div>
+
+      </div>
+    </article>
+
+    <!-- holidayDescription -->
+    <article class="form-holidayDescription" id="holidayDescription">
+      <label class="register-label small">Descripción</label>
+      <input type="text" formControlName="holidayDescription"
+             class="form-control register-input" />
+      <div *ngIf="(f.holidayDescription.errors && !f.holidayDescription.pristine)"
+           class="small text-danger">
+        <div *ngIf="f.holidayDescription.errors.required">
+          Este dato es obligatorio
+        </div>
+
+      </div>
+    </article>
+
+
+
+    <div class="form-button-area mt-4 ">
+      <div class="d-flex justify-content-between mt-0 pt-2 mb-0 pb-0">
+        <div class="form-group row ml-2">
+
+          <input type="submit" value="Guardar" class="btn btn-success mr-2"
+                 *ngIf="!holidayLocal.holidayForm.pristine && holidayLocal.holidayForm.valid"
+                 (click)="onSubmit()">
+          <input type="button" value="Regresar a la lista" (click)="onReturn()"
+                 class="btn btn-secondary mr-2">
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+</div>

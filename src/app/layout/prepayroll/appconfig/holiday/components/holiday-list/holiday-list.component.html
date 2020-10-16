@@ -1,0 +1,51 @@
+<section class="table-area">
+  <div class=" tableFixHead ">
+    <app-holiday-list-header></app-holiday-list-header>
+  </div>
+
+  <!-- table table-sm table-hover -->
+
+  <table mdbTable class=" tableFixHead ">
+
+    <thead>
+      <tr>
+        <th class="tableHeaderBackground text-center " width="15%">
+          Acciones</th>
+        <th class="tableHeaderBackground text-center " width="15%">
+          Fecha</th>
+        <th class="tableHeaderBackground text-left ">
+          Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr mdbTableCol
+          *ngFor="let item of holidayLocal.holidayArray | filter:holidayLocal.holidayTerm;
+          index as i"
+          [class.table-row-active]="item === holidayLocal.holidaySelected"
+          (click)="onSelectRecord(item, i)" (dblclick)="onViewRecord(item, i)">
+
+        <td class="tableBody text-center">
+          <div class="table-button-row">
+            <a class="btn text-primary small"><span style="font-size:smaller;"
+                    (click)="onEditRecord(item, i)">Editar</span> </a>
+            <a class="btn text-danger small"> <span style="font-size:smaller;"
+                    (click)="onDeleteRecord(item, i)">Eliminar</span> </a>
+          </div>
+        </td>
+
+
+        <td class="tableBody text-center table-cell-vertical-center">
+          <ngb-highlight [result]="item.holidayId" [term]="term">
+          </ngb-highlight>
+        </td>
+
+        <td class="tableBody text-left table-cell-vertical-center">
+          <ngb-highlight [result]="item.holidayDescription" [term]="term">
+          </ngb-highlight>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</section>

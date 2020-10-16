@@ -1,0 +1,139 @@
+<mat-nav-list dense>
+
+  <!-- Panel -->
+  <mat-list-item class="bg-sidenav" *ngIf="userName">
+    <button mat-icon-button matTooltip="Usuario"
+            [matMenuTriggerFor]="accountMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    {{userName}}
+  </mat-list-item>
+
+
+  <!-- Panel -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Panel de control
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.panelItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav item-display">
+        <div>
+          <mat-icon>{{item.linIcon}}</mat-icon>
+        </div>
+        <div> <span>&nbsp; &nbsp;{{item.linkTitle}} </span> </div>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+
+
+  <!-- Configuración -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Configuración
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.appconfigItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav item-display">
+        <div>
+          <mat-icon>{{item.linIcon}}</mat-icon>
+        </div>
+        <div> <span>&nbsp; &nbsp;{{item.linkTitle}} </span> </div>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Configuración de usuarios -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Configuración de usuarios
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.userconfigItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Herramientas -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Herramientas
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.toolsItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Listados -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Listados
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.listItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+
+  <!-- Monitoreos -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Monitoreos
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.monitorItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Pre-nomina -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Pre-nomina
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.prepayrollItems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Reportes -->
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense class="bg-sidenav">
+    <mat-expansion-panel-header class="bg-sidenav">
+      Reportes
+    </mat-expansion-panel-header>
+    <mat-nav-list *ngFor="let item of navigationLocal.menuItems.reportsIrtems"
+                  (click)="handleClick(item)" class="bg-sidenav" dense>
+      <a mat-list-item [routerLink]="item.link" class="bg-sidenav">
+        <mat-icon>{{item.linIcon}}</mat-icon>
+        <span>&nbsp; &nbsp;{{item.linkTitle}} </span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+</mat-nav-list>
+
+
+<mat-menu #accountMenu [overlapTrigger]="false" yPosition="below">
+  <button mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>Logout
+  </button>
+</mat-menu>

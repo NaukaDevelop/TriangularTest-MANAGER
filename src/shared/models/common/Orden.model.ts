@@ -1,0 +1,37 @@
+export class OrdenModel {
+  ordenId: number;
+  ordenChk: string;
+  ordenStatus: string;
+  ordenCreated: string;
+  ordenModified: string;
+  __CUSTOM__: string;
+  ordenData: string;
+  num_orden: string;
+  fecha_orden: string;
+  hora_orden: string;
+  num_tienda: string;
+  nombre_tienda: string;
+  origen: string;
+  total_pares: number;
+  status_orden: string;
+  num_socio: string;
+  nombre_socio: string;
+  email_socio: string;
+  via_envio: string;
+  status_envio: string;
+  num_transportista: string;
+  nombre_transportista: string;
+  num_rastreo: string;
+  notas: string;
+  cant_tienda: string;
+  cant_fila: any;
+  cant_filas_pick?: any;
+  cant_filas_pick_a?: any;
+  cant_filas_pick_c?: any;
+  cant_filas_pick_a_distinct?: any;
+  cant_filas_pick_c_distinct?: any;
+  surtido?: any;
+  delivered?: any;
+  tiendas?: string;
+  num_embarque?: string;
+}

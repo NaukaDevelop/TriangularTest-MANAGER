@@ -1,0 +1,25 @@
+<main class="container">
+  <p class="h4">Panel de control <span class="small">Bienvenidos</span> </p>
+
+  <div class="row">
+
+    <div class="col-sm-12 col-md-4 col-xl-6">
+      <app-main-dashboard-total></app-main-dashboard-total>
+    </div>
+
+    <div class="col-sm-12 col-md-8 col-xl-6">
+      <app-main-dashboard-percentage></app-main-dashboard-percentage>
+    </div>
+
+  </div>
+
+
+  <div class="row" *ngIf="mainDashboardLocal.mainDashboardStoreArray">
+
+    <div class="mt-3 col-md-3"
+         *ngFor="let item of mainDashboardLocal.mainDashboardStoreArray">
+      <app-main-dashboard-card [store]="item"> </app-main-dashboard-card>
+    </div>
+
+  </div>
+</main>
